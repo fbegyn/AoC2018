@@ -27,33 +27,24 @@ func main() {
 		numbers = append(numbers, freqCh)
 	}
 
-	sol1 := prob1(numbers)
-	fmt.Printf("Solution for prob1 is: %d\n", sol1)
-	sol2 := prob2(numbers)
-	fmt.Printf("Solution for prob2 is: %d\n", sol2)
-
-}
-
-func prob1(numbers []int) (freq int) {
-	for _, v := range numbers {
-		freq += v
-	}
-	return
-}
-
-func prob2(numbers []int) (freq int) {
 	freqL := make(map[int]int)
-
 	ok := true
+	first := true
+	freq := 0
+
 	for ok {
 		for _, v := range numbers {
 			freq += v
 			freqL[freq]++
 			if freqL[freq] >= 2 {
 				ok = false
+				fmt.Printf("Solution for problem 2 is %d\n", freq)
 				break
 			}
 		}
+		if first {
+			fmt.Printf("Solution for problem 1 is %d\n", freq)
+			first = false
+		}
 	}
-	return
 }
