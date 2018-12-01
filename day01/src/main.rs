@@ -11,7 +11,7 @@ fn main() {
             line.expect("Failed to read the line")
                 .parse()
                 .expect("Failed to parse into i32"),
-        );
+        )
     }
 
     let mut freq = 0;
