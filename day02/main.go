@@ -65,7 +65,7 @@ func prob2(ids []string) {
 	diff := []rune{}
 	indexes := []int{}
 	for ind := 0; ind < len(ids)-1; ind++ {
-		for _, id := range ids {
+		for _, id := range ids[ind+1:] {
 			diff, indexes = difference(ids[ind], id)
 			if len(diff) == 1 {
 				idA = id
